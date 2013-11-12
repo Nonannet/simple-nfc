@@ -14,16 +14,16 @@ See the License for the specific language governing permissions and
 limitations under the License.
 *****************************************************************************/
 
-//#define F_CPU 13560000
-//#define F_CPU 22000000
+//#define F_CPU 13560000UL
+//#define F_CPU 22000000UL
 
 //For ATiny*4:
-#define AIN1_PORT 2       //Port for OC0A on ATiny*4 is PB0
-#define AIN1_PRNG PORTA   //Port for OC0A on ATiny*4 is PB0
+#define AIN1_PORT 2       //Port for OC0A on ATiny*4 is PA2
+#define AIN1_PRNG PORTA  
 
 //For ATiny*5:
-//#define AIN1_PORT 1      //Port for OC0A on ATiny*5 is PB2
-//#define AIN1_PRNG PORTB  //Port for OC0A on ATiny*4 is PB0
+//#define AIN1_PORT 1      //Port for OC0A on ATiny*5 is PB1
+//#define AIN1_PRNG PORTB
 
 #define RFID_FREQU 13560000UL
 #define CLC_PBIT (uint16_t)(128.0 * F_CPU / RFID_FREQU + 0.5)
