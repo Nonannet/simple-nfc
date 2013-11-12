@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "NfcEmul", "NfcEmul\NfcEmul.cproj", "{69740C0F-4371-4A95-8CAF-B330977FB45A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69740C0F-4371-4A95-8CAF-B330977FB45A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{69740C0F-4371-4A95-8CAF-B330977FB45A}.Debug|AVR.Build.0 = Debug|AVR
+		{69740C0F-4371-4A95-8CAF-B330977FB45A}.Release|AVR.ActiveCfg = Release|AVR
+		{69740C0F-4371-4A95-8CAF-B330977FB45A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
