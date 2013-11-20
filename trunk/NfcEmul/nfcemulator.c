@@ -107,7 +107,7 @@ void waitForOneBitTime()
 //Skip every 17 bit times 1 cycle
 void waitForOneBitTime()
 { 
-	if (rCount < 17)
+	if (rCount < 7)
 	{
 		OCR1AL = CLC_PBIT / 2 - 1;
 		rCount++;
@@ -206,14 +206,19 @@ void txManchester(uint8_t *data, uint8_t length)
 inline void resetRxFlags()
 {
 	TCNT1 = 0;
-	TIFR1 |= (1<<OCF1A); //Clear Timer Overflow Flag
+	TIFR1 |= (1<<OCF1A); //Clear Timer Overflow Flag 
 	ACSR |= (1<<ACI); //Clear Analog Comparator Interrupt Flag
 }
 
 uint8_t rxMiller()
 {
-	uint8_t t;
-	uint16_t cDown = 0xFFF;
+	#if (F_CPU > 16000000)
+		uint16_t t; //For hi cpu clock a 8 bit variable will overflow (CLCM > 0xFF)
+	#else
+		uint8_t t; //For low cpu clock computing time is to low for 16bit a variable
+	#endif
+	
+	uint16_t cDown = 0x0FFF;
 	uint8_t bytePos = 0;
 	uint8_t hbitPos = 0;
 	
@@ -245,7 +250,7 @@ uint8_t rxMiller()
 		resetRxFlags();
 		do
 		{
-			if ((ACSR & (1<<ACI)) && (TCNT1 > CMIN))
+			if ((ACSR & (1<<ACI)) && (TCNT1 > 1))
 			{
 				t = TCNT1;
 				resetRxFlags();
@@ -333,7 +338,7 @@ void checkForNfcReader()
 
 	if (ACSR & (1<<ACI)) //13.56 MHz carrier available?
 	{
-		AIN1_PRNG &= ~(1<<AIN1_PORT); //Deactivate pull up to increase sensitivity
+		AIN1_PORT &= ~(1<<AIN1_BIT); //Deactivate pull up to increase sensitivity
 		
 		while(cdow > 0)
 		{
@@ -390,7 +395,7 @@ void checkForNfcReader()
 			
 			cdow -= (bytes == 0);		
 		}
-		AIN1_PRNG |= (1<<AIN1_PORT); //Activate pull up to prevent noise from toggling the comparator
+		AIN1_PORT |= (1<<AIN1_BIT); //Activate pull up to prevent noise from toggling the comparator
 	}
 	ACSR |= (1<<ACI); //Clear comparator interrupt flag
 }
