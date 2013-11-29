@@ -38,10 +38,7 @@ uint8_t tagStorage[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x
 int main(void)
 {
 	setupNfcEmulator(tagStorage, sizeof(tagStorage));
-		
-	//Ausgang für LED
-	DDRA |= (1<<0);
-		
+		  	
 	while(1)
 	{
 		//do other stuff
