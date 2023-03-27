@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+title: SimpleNFC
+abstract: This code emulats ISO 14443-3 compatible type 2 NFC tags
+authors:
+  - family-names: Kruse
+    given-names: Nicolas
+    orcid: "https://orcid.org/0000-0001-6758-2269"
+version: 0.11.2
+date-released: "2021-07-18"
+identifiers:
+  - description: This is the collection of archived snapshots of all versions of My Research Software
+    type: doi
+    value: "10.5281/zenodo.7428819"
+license: Apache-2.0
+repository-code: "https://github.com/Nonannet/simple-nfc"
