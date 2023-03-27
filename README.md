@@ -1,33 +1,5 @@
-# simple-nfc
+# SimpleNFC
 
-"software-only" nfc-tag-emulator (ISO 14443-3 "compatible" Type 2) for 8 bit microcontrollers
+This code emulats NFC tags (to be accurate ISO 14443-3 compatible type 2 tags). It's a "software-only" nfc-tag-emulator for 8 bit microcontrollers. Nothing more than 4 resistors, 3 capacitors and 1 diode are required to connect the RFID antenna to a microcontroller. The code is developed for an ATiny84 microcontroller.
 
-Details to the circuit on http://blog.nonan.net/2013/11/simple-nfc.html
-
-
-
-/*****************************************************************************
-
-Licensed under the Apache License, Version 2.0 (the "License");
-
-you may not use this file except in compliance with the License.
-
-You may obtain a copy of the License at
-
-
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-
-
-Unless required by applicable law or agreed to in writing, software
-
-distributed under the License is distributed on an "AS IS" BASIS,
-
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-
-See the License for the specific language governing permissions and
-
-limitations under the License.
-
-*****************************************************************************/
+Details on the circuit: https://www.nonan.net/nkruse/simplenfc
